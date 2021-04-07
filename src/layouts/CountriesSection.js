@@ -10,13 +10,19 @@ const CountriesSection = ({
   theme,
   setRegionSearch,
   regionSearch,
+  setNameCountry,
+  nameCountry,
 }) => {
   return (
     <>
       <Header theme={theme} toggleTheme={toggleTheme} />
-      <Input />
+      <Input setNameCountry={setNameCountry} nameCountry={nameCountry} />
       <InputSelection setRegionSearch={setRegionSearch} />
-      <ListCountries theme={theme} regionSearch={regionSearch} />
+      <ListCountries
+        theme={theme}
+        regionSearch={regionSearch}
+        nameCountry={nameCountry}
+      />
     </>
   );
 };

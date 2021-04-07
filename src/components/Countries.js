@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { fetchCountries } from "../config/getAllCountries";
 import { fetchRegion } from "../config/getCountrieRegion";
+import { fetchNameCountry } from "../config/getNameCountry";
 
 const ContainerListCountries = styled.div`
   width: 100%;
@@ -16,7 +17,7 @@ const Card = styled.div`
   width: 50%;
   margin: auto;
 
-  height: 350px;
+  height: auto;
   background: ${(props) =>
     props.primary === "light" ? "hsl(0, 0%, 100%)" : "hsl(207, 26%, 17%)"};
 
@@ -35,6 +36,7 @@ const Card = styled.div`
   margin-top: 40px;
   img {
     width: 100%;
+    height: auto;
   }
   p {
     margin-left: 10px;
@@ -43,7 +45,7 @@ const Card = styled.div`
   }
 `;
 
-const Countries = ({ theme, regionSearch }) => {
+const Countries = ({ theme, regionSearch, nameCountry }) => {
   const [countries, setCountries] = useState([]);
 
   const getCountries = async () => {
@@ -75,6 +77,21 @@ const Countries = ({ theme, regionSearch }) => {
       getCountries();
     }
   }, [getRegion, regionSearch]);
+
+  const getName = useCallback(async (nameCountry) => {
+    try {
+      const respose = await fetchNameCountry(nameCountry);
+      setCountries(respose.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (nameCountry) {
+      getName(nameCountry);
+    }
+  }, [getName, nameCountry]);
 
   return (
     <>

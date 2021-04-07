@@ -9,6 +9,8 @@ import { lightTheme, darkTheme } from "./components/Themes";
 function App() {
   const [regionSearch, setRegionSearch] = useState();
 
+  const [nameCountry, setNameCountry] = useState();
+
   const [theme, setTheme] = useState("light");
   const toggleTheme = () => {
     if (theme === "light") {
@@ -27,6 +29,8 @@ function App() {
         theme={theme}
         setRegionSearch={setRegionSearch}
         regionSearch={regionSearch}
+        setNameCountry={setNameCountry}
+        nameCountry={nameCountry}
       />
     </ThemeProvider>
   );
