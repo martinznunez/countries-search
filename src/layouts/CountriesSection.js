@@ -5,13 +5,18 @@ import Input from "../components/Input";
 import InputSelection from "../components/InputSelection";
 import ListCountries from "../components/ListCountries";
 
-const CountriesSection = ({ toggleTheme, theme }) => {
+const CountriesSection = ({
+  toggleTheme,
+  theme,
+  setRegionSearch,
+  regionSearch,
+}) => {
   return (
     <>
       <Header theme={theme} toggleTheme={toggleTheme} />
       <Input />
-      <InputSelection />
-      <ListCountries theme={theme} />
+      <InputSelection setRegionSearch={setRegionSearch} />
+      <ListCountries theme={theme} regionSearch={regionSearch} />
     </>
   );
 };

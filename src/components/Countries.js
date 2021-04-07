@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import styled from "styled-components";
 
 import { fetchCountries } from "../config/getAllCountries";
+import { fetchRegion } from "../config/getCountrieRegion";
 
 const ContainerListCountries = styled.div`
   width: 100%;
@@ -42,7 +43,7 @@ const Card = styled.div`
   }
 `;
 
-const Countries = ({ theme }) => {
+const Countries = ({ theme, regionSearch }) => {
   const [countries, setCountries] = useState([]);
 
   const getCountries = async () => {
@@ -57,6 +58,23 @@ const Countries = ({ theme }) => {
   useEffect(() => {
     getCountries();
   }, []);
+
+  const getRegion = useCallback(async (regionSearch) => {
+    try {
+      const respose = await fetchRegion(regionSearch);
+      setCountries(respose.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (regionSearch) {
+      getRegion(regionSearch);
+    } else {
+      getCountries();
+    }
+  }, [getRegion, regionSearch]);
 
   return (
     <>

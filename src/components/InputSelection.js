@@ -13,20 +13,25 @@ const ContainerSelect = styled.div`
   }
 `;
 
-const InputSelection = () => {
+const InputSelection = ({ setRegionSearch }) => {
+  const handleSelect = (e) => {
+    setRegionSearch(e.target.value);
+  };
+
   return (
     <>
       <ContainerSelect>
-        <select>
-          <option></option>
+        <select onChange={(e) => handleSelect(e)}>
+          <option value="">---Select Region---</option>
+          <option>Africa</option>
 
-          <option></option>
+          <option>America </option>
 
-          <option></option>
+          <option>Asia </option>
 
-          <option></option>
+          <option> Europe</option>
 
-          <option></option>
+          <option>Oceania </option>
         </select>
       </ContainerSelect>
     </>
