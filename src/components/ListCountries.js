@@ -2,10 +2,10 @@ import React from "react";
 
 import Countries from "../components/Countries";
 
-const ListCountries = ({ theme }) => {
+const ListCountries = ({ theme, regionSearch }) => {
   return (
     <>
-      <Countries theme={theme} />
+      <Countries theme={theme} regionSearch={regionSearch} />
     </>
   );
 };

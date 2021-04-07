@@ -7,6 +7,8 @@ import { GlobalStyles } from "./components/GlobalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 
 function App() {
+  const [regionSearch, setRegionSearch] = useState();
+
   const [theme, setTheme] = useState("light");
   const toggleTheme = () => {
     if (theme === "light") {
@@ -20,7 +22,12 @@ function App() {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
 
-      <CountriesSection toggleTheme={toggleTheme} theme={theme} />
+      <CountriesSection
+        toggleTheme={toggleTheme}
+        theme={theme}
+        setRegionSearch={setRegionSearch}
+        regionSearch={regionSearch}
+      />
     </ThemeProvider>
   );
 }
