@@ -5,11 +5,11 @@ const ContainerSelect = styled.div`
   width: 100%;
   margin-top: 50px;
   select {
-    padding: 24px;
+    padding: 15px;
     border: 10px;
     border-radius: 5px;
     margin-left: 40px;
-    width: 300px;
+    width: 270px;
   }
 `;
 
@@ -18,15 +18,15 @@ const InputSelection = () => {
     <>
       <ContainerSelect>
         <select>
-          <option>Fútbol</option>
+          <option></option>
 
-          <option>Críquet</option>
+          <option></option>
 
-          <option>Básquetbol</option>
+          <option></option>
 
-          <option>Hockey</option>
+          <option></option>
 
-          <option>Tenis</option>
+          <option></option>
         </select>
       </ContainerSelect>
     </>
