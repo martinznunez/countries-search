@@ -11,7 +11,7 @@ const CountriesSection = ({ toggleTheme, theme }) => {
       <Header theme={theme} toggleTheme={toggleTheme} />
       <Input />
       <InputSelection />
-      <ListCountries />
+      <ListCountries theme={theme} />
     </>
   );
 };

@@ -1,27 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Countries from "../components/Countries";
 
-import { fetchCountries } from "../config/getAllCountries";
-
-const ListCountries = () => {
-  const getCountries = async () => {
-    try {
-      const response = await fetchCountries();
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getCountries();
-  }, []);
+const ListCountries = ({ theme }) => {
   return (
     <>
-      <div>
-        <Countries />
-      </div>
+      <Countries theme={theme} />
     </>
   );
 };

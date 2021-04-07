@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const ContainerInput = styled.div`
   width: 100%;
   margin: auto;
@@ -14,14 +15,14 @@ const ContainerInput = styled.div`
     position: absolute;
     display: flex;
     justify-content: flex-start;
-    width: 60%;
+    width: 75%;
     cursor: pointer;
   }
   input {
-    padding: 30px;
+    padding: 15px;
     border: 10px;
     border-radius: 10px;
-    width: 500px;
+    width: 400px;
   }
 `;
 

@@ -19,6 +19,7 @@ function App() {
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
+
       <CountriesSection toggleTheme={toggleTheme} theme={theme} />
     </ThemeProvider>
   );
