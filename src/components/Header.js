@@ -26,6 +26,17 @@ const ContainerHeader = styled.div`
   h1 {
     font-size: 1.3rem;
   }
+
+  @media screen and (min-width: 1520px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+    .container-darkModel {
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
 `;
 
 const Header = ({ toggleTheme, theme }) => {
