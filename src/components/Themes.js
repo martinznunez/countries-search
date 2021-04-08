@@ -1,17 +1,16 @@
-// - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
-// - Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
-// - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
-// - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
-// - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
-// - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
-
 export const lightTheme = {
   background: "hsl(0, 0%, 90%)",
-  toggleBorder: "#FFF",
   text: "#000",
+  color: "hsl(0, 0%, 100%)",
+  span: "hsl(0, 0%, 90%)",
+  button: "#000",
+  boxshadow: "2px 2px 2px 2px rgba(0, 0, 0, 0.2)",
 };
 export const darkTheme = {
   text: "#FAFAFA",
   toggleBorder: "#6B8096",
-  background: "hsl(209, 23%, 22%)",
+  background: "hsl(207, 26%, 17%)",
+  color: "hsl(209, 23%, 22%)",
+  button: "#FAFAFA",
+  boxshadow: "2px 2px 2px 2px rgba(0, 0, 0, 0.4)",
 };

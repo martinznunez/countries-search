@@ -5,6 +5,8 @@ import { fetchCountries } from "../config/getAllCountries";
 import { fetchRegion } from "../config/getCountrieRegion";
 import { fetchNameCountry } from "../config/getNameCountry";
 
+import { useHistory } from "react-router-dom";
+
 const ContainerListCountries = styled.div`
   width: 100%;
   display: flex;
@@ -18,8 +20,8 @@ const Card = styled.div`
   margin: auto;
 
   height: auto;
-  background: ${(props) =>
-    props.primary === "light" ? "hsl(0, 0%, 100%)" : "hsl(207, 26%, 17%)"};
+  background: ${({ theme }) => theme.color};
+  color: ${({ theme }) => theme.text};
 
   h5 {
     font-size: 1.2rem;
@@ -37,6 +39,7 @@ const Card = styled.div`
   img {
     width: 100%;
     height: auto;
+    cursor: pointer;
   }
   p {
     margin-left: 10px;
@@ -45,8 +48,10 @@ const Card = styled.div`
   }
 `;
 
-const Countries = ({ theme, regionSearch, nameCountry }) => {
+const Countries = ({ regionSearch, nameCountry }) => {
   const [countries, setCountries] = useState([]);
+
+  const history = useHistory();
 
   const getCountries = async () => {
     try {
@@ -93,26 +98,37 @@ const Countries = ({ theme, regionSearch, nameCountry }) => {
     }
   }, [getName, nameCountry]);
 
+  const handleClickCountry = (item) => {
+    if (item) {
+      history.push({
+        pathname: "/country",
+        data: item,
+      });
+    }
+  };
+
   return (
     <>
       <ContainerListCountries>
         {countries
-          ? countries.map((countrie) => (
-              <Card primary={theme} key={countrie.name}>
-                <img src={countrie.flag} alt="" />
+          ? countries.map((country) => (
+              <Card key={country.name}>
+                <img
+                  onClick={() => handleClickCountry(country)}
+                  src={country.flag}
+                  alt=""
+                />
 
-                <h5> {countrie.name} </h5>
+                <h5> {country.name} </h5>
                 <p>
                   <strong> population: </strong>
-                  {countrie.population}
+                  {country.population}
                 </p>
                 <p>
-                  {" "}
-                  <strong> region: </strong> {countrie.region}
+                  <strong> region: </strong> {country.region}
                 </p>
                 <p>
-                  {" "}
-                  <strong> capital: </strong> {countrie.capital}
+                  <strong> capital: </strong> {country.capital}
                 </p>
               </Card>
             ))

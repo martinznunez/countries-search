@@ -14,13 +14,9 @@ const ContainerInput = styled.div`
 
   .icon {
     position: absolute;
-    display: flex;
-    justify-content: flex-start;
-    width: 20px;
-
+    width: auto;
+    margin-top: 15px;
     margin-left: 70%;
-
-    cursor: pointer;
   }
   input {
     padding: 15px;
@@ -32,10 +28,11 @@ const ContainerInput = styled.div`
   }
 `;
 
-const Input = ({ setNameCountry, nameCountry }) => {
+const Input = ({ setNameCountry }) => {
   const [inputValue, setInputValue] = useState("");
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     if (inputValue.trim() !== "") {
       setNameCountry(inputValue);
 
@@ -46,19 +43,20 @@ const Input = ({ setNameCountry, nameCountry }) => {
   return (
     <>
       <ContainerInput>
-        <input
-          onChange={(e) => setInputValue(e.target.value)}
-          type="text"
-          placeholder="Search for a countries...  "
-          value={inputValue}
-        />
-        <div className="icon">
-          <FontAwesomeIcon
-            icon={faSearch}
-            onClick={handleClick}
-            style={{ color: "hsl(0, 0%, 50%)" }}
+        <form onSubmit={handleClick}>
+          <div className="icon">
+            <FontAwesomeIcon
+              icon={faSearch}
+              style={{ color: "hsl(0, 0%, 50%)" }}
+            />
+          </div>
+          <input
+            onChange={(e) => setInputValue(e.target.value)}
+            type="text"
+            placeholder="Search for a countries...  "
+            value={inputValue}
           />
-        </div>
+        </form>
       </ContainerInput>
     </>
   );

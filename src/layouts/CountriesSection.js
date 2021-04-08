@@ -1,28 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-import Header from "../components/Header";
 import Input from "../components/Input";
 import InputSelection from "../components/InputSelection";
-import ListCountries from "../components/ListCountries";
 
-const CountriesSection = ({
-  toggleTheme,
-  theme,
-  setRegionSearch,
-  regionSearch,
-  setNameCountry,
-  nameCountry,
-}) => {
+import Countries from "../components/Countries";
+
+const CountriesSection = () => {
+  const [regionSearch, setRegionSearch] = useState();
+
+  const [nameCountry, setNameCountry] = useState();
+
   return (
     <>
-      <Header theme={theme} toggleTheme={toggleTheme} />
-      <Input setNameCountry={setNameCountry} nameCountry={nameCountry} />
+      <Input setNameCountry={setNameCountry} />
       <InputSelection setRegionSearch={setRegionSearch} />
-      <ListCountries
-        theme={theme}
-        regionSearch={regionSearch}
-        nameCountry={nameCountry}
-      />
+      <Countries regionSearch={regionSearch} nameCountry={nameCountry} />
     </>
   );
 };
