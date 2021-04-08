@@ -25,7 +25,7 @@ const InputSelection = ({ setRegionSearch }) => {
           <option value="">---Select Region---</option>
           <option>Africa</option>
 
-          <option>America</option>
+          <option>América</option>
 
           <option>Asia</option>
 

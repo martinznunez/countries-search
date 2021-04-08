@@ -25,6 +25,12 @@ const Card = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
+  @media screen and (min-width: 1200px) {
+    width: 90%;
+
+    flex-direction: row;
+  }
+
   .container-img {
     width: 100%;
     margin: auto;
@@ -76,13 +82,13 @@ const Card = styled.div`
   @media screen and (min-width: 1200px) {
     .container-img {
       img {
-        width: 500px;
+        width: 400px;
       }
     }
     .container-details {
       h5 {
         font-size: 2.5rem;
-        margin-left: 50%;
+        margin-left: 0%;
       }
     }
   }
