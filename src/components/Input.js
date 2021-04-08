@@ -21,12 +21,25 @@ const ContainerInput = styled.div`
     border: 10px;
     border-radius: 10px;
     width: 95%;
+    font-size: 1rem;
   }
 
   @media screen and (min-width: 1200px) {
     width: 70%;
     .icon {
       margin-left: 60%;
+    }
+  }
+  @media screen and (min-width: 1520px) {
+    width: 50%;
+    .icon {
+      margin-left: 45%;
+      margin-top: 22px;
+    }
+    input {
+      padding: 20px;
+
+      width: 90%;
     }
   }
 `;

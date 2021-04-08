@@ -10,6 +10,7 @@ const ContainerSelect = styled.div`
     border-radius: 5px;
     margin-left: 40px;
     width: 270px;
+    font-size: 1rem;
   }
 `;
 
@@ -25,7 +26,7 @@ const InputSelection = ({ setRegionSearch }) => {
           <option value="">---Select Region---</option>
           <option>Africa</option>
 
-          <option>América</option>
+          <option>Americas</option>
 
           <option>Asia</option>
 
