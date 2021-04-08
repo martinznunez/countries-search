@@ -12,8 +12,9 @@ const ContainerHeader = styled.div`
   padding-top: 10px;
   flex-direction: row;
   justify-content: space-around;
-  background: ${(props) =>
-    props.primary === "light" ? "hsl(0, 0%, 100%)" : "hsl(207, 26%, 17%)"};
+  background: ${({ theme }) => theme.color};
+  color: ${({ theme }) => theme.text};
+
   .container-darkModel {
     display: flex;
     p {
@@ -30,7 +31,7 @@ const ContainerHeader = styled.div`
 const Header = ({ toggleTheme, theme }) => {
   return (
     <>
-      <ContainerHeader primary={theme}>
+      <ContainerHeader>
         <h1>Wheare in the world? </h1>
         <div className="container-darkModel">
           <FontAwesomeIcon

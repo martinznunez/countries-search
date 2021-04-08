@@ -13,6 +13,12 @@ const ContainerListCountries = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 990px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 `;
 
 const Card = styled.div`
@@ -43,8 +49,32 @@ const Card = styled.div`
   }
   p {
     margin-left: 10px;
-
     font-weight: 100;
+  }
+
+  @media screen and (min-width: 990px) {
+    width: 40%;
+    img {
+      height: 200px;
+    }
+  }
+  @media screen and (min-width: 1300px) {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media screen and (min-width: 1520px) {
+    width: 15%;
+    height: 360px;
+
+    img {
+      height: 200px;
+    }
+    strong {
+      font-size: 0.9rem;
+      line-height: 30px;
+    }
   }
 `;
 

@@ -8,23 +8,26 @@ const ContainerInput = styled.div`
   width: 100%;
   margin: auto;
   margin-top: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 
   .icon {
     position: absolute;
     width: auto;
     margin-top: 15px;
-    margin-left: 70%;
+    margin-left: 90%;
   }
   input {
     padding: 15px;
     border: 10px;
-
     border-radius: 10px;
+    width: 95%;
+  }
 
-    width: 400px;
+  @media screen and (min-width: 1200px) {
+    width: 70%;
+    .icon {
+      margin-left: 60%;
+    }
   }
 `;
 
@@ -50,12 +53,14 @@ const Input = ({ setNameCountry }) => {
               style={{ color: "hsl(0, 0%, 50%)" }}
             />
           </div>
-          <input
-            onChange={(e) => setInputValue(e.target.value)}
-            type="text"
-            placeholder="Search for a countries...  "
-            value={inputValue}
-          />
+          <div>
+            <input
+              onChange={(e) => setInputValue(e.target.value)}
+              type="text"
+              placeholder="Search for a countries...  "
+              value={inputValue}
+            />
+          </div>
         </form>
       </ContainerInput>
     </>

@@ -12,6 +12,10 @@ const ContainerPrimary = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  @media screen and (min-width: 900px) {
+    margin-top: 0px;
+  }
 `;
 
 const Card = styled.div`
@@ -30,6 +34,7 @@ const Card = styled.div`
       width: 320px;
     }
   }
+
   .container-details {
     width: 80%;
     display: flex;
@@ -54,6 +59,31 @@ const Card = styled.div`
     h5 {
       margin-bottom: 30px;
       font-size: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .container-img {
+      margin-top: 5%;
+      margin-bottom: 5%;
+      img {
+        width: 450px;
+        height: auto;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .container-img {
+      img {
+        width: 500px;
+      }
+    }
+    .container-details {
+      h5 {
+        font-size: 2.5rem;
+        margin-left: 50%;
+      }
     }
   }
 `;
