@@ -7,6 +7,8 @@ import { fetchNameCountry } from "../config/getNameCountry";
 
 import { useHistory } from "react-router-dom";
 
+import ErrorMessage from "./ErrorMessage";
+
 const ContainerListCountries = styled.div`
   width: 100%;
   display: flex;
@@ -81,14 +83,17 @@ const Card = styled.div`
 const Countries = ({ regionSearch, nameCountry }) => {
   const [countries, setCountries] = useState([]);
 
+  const [messageError, setMessageError] = useState(false);
+
   const history = useHistory();
 
   const getCountries = async () => {
     try {
       const response = await fetchCountries();
       setCountries(response.data);
+      setMessageError(false);
     } catch (error) {
-      console.log(error);
+      setMessageError(true);
     }
   };
 
@@ -100,8 +105,9 @@ const Countries = ({ regionSearch, nameCountry }) => {
     try {
       const respose = await fetchRegion(regionSearch);
       setCountries(respose.data);
+      setMessageError(false);
     } catch (error) {
-      console.log(error);
+      setMessageError(true);
     }
   }, []);
 
@@ -117,8 +123,9 @@ const Countries = ({ regionSearch, nameCountry }) => {
     try {
       const respose = await fetchNameCountry(nameCountry);
       setCountries(respose.data);
+      setMessageError(false);
     } catch (error) {
-      console.log(error);
+      setMessageError(true);
     }
   }, []);
 
@@ -139,6 +146,10 @@ const Countries = ({ regionSearch, nameCountry }) => {
 
   return (
     <>
+      <ErrorMessage
+        messageError={messageError}
+        message="Something went wrong"
+      />
       <ContainerListCountries>
         {countries
           ? countries.map((country) => (

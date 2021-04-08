@@ -37,7 +37,7 @@ const Header = ({ toggleTheme, theme }) => {
           <FontAwesomeIcon
             onClick={toggleTheme}
             icon={faMoon}
-            style={{ color: "hsl(0, 0%, 70%)" }}
+            style={{ color: "hsl(0, 0%, 70%)", cursor: "pointer" }}
           />
           <p> Dark Mode</p>
         </div>
