@@ -39,13 +39,14 @@ const ContainerHeader = styled.div`
   }
 `;
 
-const Header = ({ toggleTheme, theme }) => {
+const Header = ({ toggleTheme }) => {
   return (
     <>
       <ContainerHeader>
         <h1>Wheare in the world? </h1>
         <div className="container-darkModel">
           <FontAwesomeIcon
+            data-testid="icon"
             onClick={toggleTheme}
             icon={faMoon}
             style={{ color: "hsl(0, 0%, 70%)", cursor: "pointer" }}

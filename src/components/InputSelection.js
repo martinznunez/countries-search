@@ -22,7 +22,7 @@ const InputSelection = ({ setRegionSearch }) => {
   return (
     <>
       <ContainerSelect>
-        <select onChange={(e) => handleSelect(e)}>
+        <select data-testid="select" onChange={(e) => handleSelect(e)}>
           <option value="">---Select Region---</option>
           <option>Africa</option>
 

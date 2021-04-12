@@ -82,7 +82,6 @@ const Card = styled.div`
 
 const Countries = ({ regionSearch, nameCountry }) => {
   const [countries, setCountries] = useState([]);
-
   const [messageError, setMessageError] = useState(false);
 
   const history = useHistory();
@@ -147,6 +146,7 @@ const Countries = ({ regionSearch, nameCountry }) => {
   return (
     <>
       <ErrorMessage
+        data-testid="message-error"
         messageError={messageError}
         message="Something went wrong"
       />
@@ -155,11 +155,11 @@ const Countries = ({ regionSearch, nameCountry }) => {
           ? countries.map((country) => (
               <Card key={country.name}>
                 <img
+                  data-testid="handleClickCountry"
                   onClick={() => handleClickCountry(country)}
                   src={country.flag}
                   alt=""
                 />
-
                 <h5> {country.name} </h5>
                 <p>
                   <strong> population: </strong>

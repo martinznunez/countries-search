@@ -26,7 +26,7 @@ const Button = () => {
   return (
     <>
       <Link to="/">
-        <ButtonStyle>
+        <ButtonStyle data-testid="icon-btn">
           <FontAwesomeIcon icon={faLongArrowAltLeft} size="1x" />
           Black
         </ButtonStyle>
