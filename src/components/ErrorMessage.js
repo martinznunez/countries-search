@@ -25,7 +25,7 @@ const ErrorMessage = ({ message, messageError }) => {
     <>
       {messageError ? (
         <ContainerMessage>
-          <p> {message}</p>
+          <p data-testid="message-error"> {message}</p>
         </ContainerMessage>
       ) : null}
     </>

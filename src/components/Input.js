@@ -49,6 +49,7 @@ const Input = ({ setNameCountry }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
+
     if (inputValue.trim() !== "") {
       setNameCountry(inputValue);
 
@@ -59,15 +60,17 @@ const Input = ({ setNameCountry }) => {
   return (
     <>
       <ContainerInput>
-        <form onSubmit={handleClick}>
+        <form data-testid="submit" onSubmit={handleClick}>
           <div className="icon">
             <FontAwesomeIcon
+              data-testid="icon"
               icon={faSearch}
               style={{ color: "hsl(0, 0%, 50%)" }}
             />
           </div>
           <div>
             <input
+              data-testid="input"
               onChange={(e) => setInputValue(e.target.value)}
               type="text"
               placeholder="Search for a countries...  "

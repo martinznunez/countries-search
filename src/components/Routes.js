@@ -23,7 +23,7 @@ const Routes = () => {
         <GlobalStyles />
 
         <Router>
-          <Header theme={theme} toggleTheme={toggleTheme} />
+          <Header toggleTheme={toggleTheme} />
           <Switch>
             <Route exact path="/" component={CountriesSection} />
             <Route exact path="/country" component={Country} />
